@@ -1,0 +1,24 @@
+{
+  "name": "strava-avg-data",
+  "version": "1.0.0",
+  "description": "This app will allow me to view my data in a much better way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnybluhm/strava-avg-data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnybluhm/strava-avg-data/issues"
+  },
+  "homepage": "https://github.com/johnnybluhm/strava-avg-data#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.7"
+  }
+}
