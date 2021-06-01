@@ -25,6 +25,18 @@ app.get('/getUser', async function(req, res){
 
 });
 
+app.get('/getData', async function(req, res){
+
+    const response = await fetch('https://www.strava.com/api/v3/athlete', {
+    	headers: {'Authorization': `Bearer ${access_token}`}
+    });
+    const data = await response.json();
+    console.log(data);
+    res.send(data);
+
+});
+
+//oAuth shit
 app.get('/', async function(req, res){
 
 	var url = `http://www.strava.com/oauth/authorize?client_id=${client_id}&response_type=code&redirect_uri=http://localhost:3000/after_login&approval_prompt=force&scope=read`;
@@ -32,8 +44,10 @@ app.get('/', async function(req, res){
 });
 
 app.get('/after_login', async function(req, res){
-	res.send("WE HERE");
 	console.log(req.query);
+	const code = req.query.code;
+	const scope = req.query.scope;
+	var url = `https://www.strava.com/oauth/token`
 	
 });
 
