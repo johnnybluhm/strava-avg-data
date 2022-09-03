@@ -1,0 +1,23 @@
+get all
+curl https://www.strava.com/api/v3/athlete/activities?per_page=100 -H 'Authorization: Bearer 18ab7d5d89dfe3114dd7d57da161aa70393ccbba'
+
+curl https://www.strava.com/oauth/authorize?client_id=66831&response_type=code&redirect_uri=http://localhost/exchange_token&scope=read,activity:read,activity:read_all
+
+curl -X POST https://www.strava.com/api/v3/oauth/token \
+  -d client_id=66831 \
+  -d client_secret=a9d10ba407da3fecec77dbc0ec46163768294367 \
+  -d code=7aeecec5f409133494f8c868313bd9087937e91b \
+  -d grant_type=authorization_code
+
+
+  18ab7d5d89dfe3114dd7d57da161aa70393ccbba
+
+
+curl https://www.strava.com/api/v3/athlete/activities/2979324156?include_all_efforts=false -H 'Authorization: Bearer 18ab7d5d89dfe3114dd7d57da161aa70393ccbba'
+  7722964383
+
+
+
+
+
+  curl https://www.strava.com/api/v3/activities/7722964383?include_all_efforts=false -H 'Authorization: Bearer 18ab7d5d89dfe3114dd7d57da161aa70393ccbba' > detailedData.txt
